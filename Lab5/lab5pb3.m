@@ -1,0 +1,2 @@
+function lab5pb3	clf;hold on;grid on;	f=@(x) sin(2*x);	fd=@(x) 2*cos(2*x);	nodes=linspace(-5,5,15);	fplot(f,[-5 5]);	values = arrayfun(f, nodes);	derivatives = arrayfun(fd, nodes);	x = linspace(-5,5,50);	Hx = hermiteInterpolation(nodes, values, derivatives, x);	plot(x, Hx);
+endfunction

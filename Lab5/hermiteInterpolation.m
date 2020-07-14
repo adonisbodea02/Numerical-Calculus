@@ -1,0 +1,1 @@
+function Hx = hermiteInterpolation(nodes, values, derivatives, x)  table = divDifDouble(nodes, values, derivatives);  coefs = table(1,:);  doubleNodes = repelem(nodes, 2);    Hx = x;  for i=1:length(x)    prods=[1 cumprod(x(i) - doubleNodes(1:end-1))];    Hx(i)=table(1,:)*prods';  end  endfunction
